@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
+</head>
+<body>
+<form method="post">
+    <label>Name
+    <input type="text" name="first_name">
+    </label>
+    <br>
+    <label>Last Name
+    <input type="text" name="last_name">
+    </label>
+    <label>Date of Birth
+    <input type="text" name="date_of_birth">
+    </label>
+    <label>Telephone
+    <input type="text" name="phone">
+    </label>
+    {% csrf_token %}
+    <input type="submit"></input>
+</form>
+<table>
+    <tr>
+        {% for student in students %}
+            <td>{{ student.pk }}</td><td>{{ student.first_name }}</td>
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>
